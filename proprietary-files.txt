@@ -692,7 +692,6 @@ system_ext/framework/qcrilhook.jar
 system_ext/framework/qti-telephony-common.jar|96154b2576114dd566bbc99a2d9af612de8849df
 -system_ext/priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk
 vendor/bin/hw/qcrild
-vendor/bin/ATFWD-daemon
 vendor/bin/adpl
 vendor/bin/ipacm-diag
 vendor/bin/netmgrd
@@ -716,7 +715,6 @@ vendor/lib/libpdmapper.so
 vendor/lib/libpdnotifier.so
 -vendor/lib/libqmiservices.so
 vendor/lib/vendor.qti.hardware.radio.am@1.0.so
-vendor/lib/vendor.qti.hardware.radio.atcmdfwd@1.0.so
 vendor/lib/vendor.qti.hardware.radio.ims@1.0.so
 vendor/lib/vendor.qti.hardware.radio.ims@1.1.so
 vendor/lib/vendor.qti.hardware.radio.ims@1.2.so
@@ -771,7 +769,6 @@ vendor/lib64/qcrild_librilutils.so
 vendor/lib64/qtibus.so
 vendor/lib64/qtimutex.so
 vendor/lib64/vendor.qti.hardware.radio.am@1.0.so
-vendor/lib64/vendor.qti.hardware.radio.atcmdfwd@1.0.so
 vendor/lib64/vendor.qti.hardware.radio.ims@1.0.so
 vendor/lib64/vendor.qti.hardware.radio.ims@1.1.so
 vendor/lib64/vendor.qti.hardware.radio.ims@1.2.so
