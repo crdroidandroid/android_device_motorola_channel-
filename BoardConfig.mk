@@ -20,7 +20,7 @@
 DEVICE_PATH := device/motorola/channel
 
 # Assertions
-TARGET_BOARD_INFO_FILE := $(DEVICE_PATH)/board-info.txt
+TARGET_BOARD_INFO_FILE := $(DEVICE_PATH)/configs/board-info.txt
 TARGET_OTA_ASSERT_DEVICE := channel
 
 # Display
@@ -58,5 +58,5 @@ BOARD_VENDOR_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/vendor
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += $(DEVICE_PATH)
 
-# inherit from the proprietary version
+# Inherit from the proprietary version
 include vendor/motorola/channel/BoardConfigVendor.mk
