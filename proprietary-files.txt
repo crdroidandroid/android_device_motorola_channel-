@@ -922,6 +922,10 @@ vendor/lib64/vendor.qti.imsrtpservice@2.0.so
 vendor/lib64/vendor.qti.imsrtpservice@2.1-service-Impl.so
 vendor/lib64/vendor.qti.imsrtpservice@2.1.so
 
+# Radio - from LA.UM.10.6.2.r1-02500-89xx
+vendor/lib64/deviceInfoServiceModule.so
+vendor/lib64/libril-qc-logger.so
+
 # Sensors
 vendor/bin/capsense_reset
 vendor/bin/sensors.qti
