@@ -12,6 +12,12 @@ PRODUCT_AAPT_PREBUILT_DPI := xhdpi hdpi
 
 # A/B updater
 AB_OTA_POSTINSTALL_CONFIG += \
+    RUN_POSTINSTALL_product=true \
+    POSTINSTALL_PATH_product=bin/check_dynamic_partitions \
+    FILESYSTEM_TYPE_product=ext4 \
+    POSTINSTALL_OPTIONAL_product=false
+
+AB_OTA_POSTINSTALL_CONFIG += \
     RUN_POSTINSTALL_system=true \
     POSTINSTALL_PATH_system=system/bin/otapreopt_script \
     FILESYSTEM_TYPE_system=ext4 \
@@ -124,6 +130,10 @@ PRODUCT_PACKAGES += \
     android.hardware.drm@1.3.vendor \
     libhidlmemory.vendor
 
+# Dynamic partitions
+PRODUCT_USE_DYNAMIC_PARTITIONS := true
+PRODUCT_RETROFIT_DYNAMIC_PARTITIONS := true
+
 # Fingerprint
 PRODUCT_PACKAGES += \
     android.hardware.biometrics.fingerprint@2.1.vendor
@@ -137,6 +147,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/idc/uinput-fpc.idc:$(TARGET_COPY_OUT_VENDOR)/usr/idc/uinput-fpc.idc \
     $(LOCAL_PATH)/configs/keylayout/uinput-fpc.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/uinput-fpc.kl
+
+# Fastboot
+PRODUCT_PACKAGES += \
+    fastbootd
 
 # Gatekeeper
 PRODUCT_PACKAGES += \
@@ -433,6 +447,7 @@ PRODUCT_PACKAGES += \
 
 # Update Engine
 PRODUCT_PACKAGES += \
+    check_dynamic_partitions \
     otapreopt_script \
     update_engine \
     update_engine_sideload \
