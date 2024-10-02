@@ -398,7 +398,7 @@
     <string translatable="false" name="config_ntpServer">1.android.pool.ntp.org</string>
 
     <!-- Enable Zram writeback feature to allow unused pages in zram be written to flash. -->
-    <bool name="config_zramWriteback">true</bool>
+    <bool name="config_zramWriteback">false</bool>
 
     <!-- List of biometric sensors on the device, in decreasing strength. Consumed by AuthService
          when registering authenticators with BiometricService. Format must be ID:Modality:Strength,
