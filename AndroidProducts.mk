@@ -7,6 +7,6 @@ PRODUCT_MAKEFILES := \
     $(LOCAL_DIR)/lineage_channel.mk
 
 COMMON_LUNCH_CHOICES := \
-    lineage_channel-ap2a-eng \
-    lineage_channel-ap2a-user \
-    lineage_channel-ap2a-userdebug
+    lineage_channel-eng \
+    lineage_channel-user \
+    lineage_channel-userdebug

@@ -1,0 +1,26 @@
+[
+  {
+    "repository":"crdroidandroid/android_kernel_motorola_sdm632",
+    "target_path":"kernel/motorola/sdm632",
+    "branch":"14.0-channel"
+  },
+  {
+    "repository":"crdroidandroid/proprietary_vendor_motorola_channel",
+    "target_path":"vendor/motorola/channel"
+  },
+  {
+    "repository":"LineageOS/android_hardware_motorola",
+    "target_path":"hardware/motorola",
+    "branch":"lineage-21"
+  },
+  {
+    "repository":"LineageOS/android_external_bson",
+    "target_path":"external/bson",
+    "branch":"lineage-21"
+  },
+  {
+    "repository":"LineageOS/android_system_qcom",
+    "target_path":"system/qcom",
+    "branch":"lineage-21"
+  }
+]
