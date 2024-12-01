@@ -28,7 +28,6 @@
    IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-#include <sys/sysinfo.h>
 #include <android-base/logging.h>
 #include <android-base/properties.h>
 
@@ -67,51 +66,6 @@ void OverrideProperty(const char* name, const char* value) {
     }
 }
 
-void OverrideMemoryProperties() {
-    struct sysinfo sys;
-    std::string heapstartsize;
-    std::string heapgrowthlimit;
-    std::string heapsize;
-    std::string heaptargetutilization;
-    std::string heapminfree;
-    std::string heapmaxfree;
-
-    sysinfo(&sys);
-
-    if (sys.totalram > 5072ull * 1024 * 1024) {
-        // from - phone-xhdpi-6144-dalvik-heap.mk
-        heapstartsize = "16m";
-        heapgrowthlimit = "256m";
-        heapsize = "512m";
-        heaptargetutilization = "0.5";
-        heapminfree = "8m";
-        heapmaxfree = "32m";
-    } else if (sys.totalram > 3072ull * 1024 * 1024) {
-        // from - phone-xxhdpi-4096-dalvik-heap.mk
-        heapstartsize = "8m";
-        heapgrowthlimit = "256m";
-        heapsize = "512m";
-        heaptargetutilization = "0.6";
-        heapminfree = "8m";
-        heapmaxfree = "16m";
-    } else {
-        // from - phone-xhdpi-2048-dalvik-heap.mk
-        heapstartsize = "8m";
-        heapgrowthlimit = "192m";
-        heapsize = "512m";
-        heaptargetutilization = "0.75";
-        heapminfree = "512k";
-        heapmaxfree = "8m";
-    }
-
-    OverrideProperty("dalvik.vm.heapstartsize", heapstartsize.c_str());
-    OverrideProperty("dalvik.vm.heapgrowthlimit", heapgrowthlimit.c_str());
-    OverrideProperty("dalvik.vm.heapsize", heapsize.c_str());
-    OverrideProperty("dalvik.vm.heaptargetutilization", heaptargetutilization.c_str());
-    OverrideProperty("dalvik.vm.heapminfree", heapminfree.c_str());
-    OverrideProperty("dalvik.vm.heapmaxfree", heapmaxfree.c_str());
-}
-
 void OverrideCarrierProperties() {
     const auto ro_prop_override = [](const char* source, const char* prop, const char* value,
                                      bool product) {
@@ -148,6 +102,5 @@ void OverrideCarrierProperties() {
 }
 
 void vendor_load_properties() {
-    OverrideMemoryProperties();
     OverrideCarrierProperties();
 }
