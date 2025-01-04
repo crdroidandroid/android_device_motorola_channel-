@@ -53,9 +53,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/audio/mixer_paths_tas2560.xml:$(TARGET_COPY_OUT_VENDOR)/etc/mixer_paths_tas2560.xml \
     $(LOCAL_PATH)/configs/audio/mixer_paths.xml:$(TARGET_COPY_OUT_VENDOR)/etc/mixer_paths.xml
 
-# AudioFX
-TARGET_EXCLUDES_AUDIOFX := true
-
 # Additional native libraries
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/public.libraries.txt:$(TARGET_COPY_OUT_VENDOR)/etc/public.libraries.txt
