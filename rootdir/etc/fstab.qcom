@@ -6,10 +6,11 @@
 # Currently we dont have e2fsck compiled. So fs check would failed.
 
 #<src>					<mnt_point>		<type>	<mnt_flags and options>								<fs_mgr_flags>
+odm						/odm			ext4	ro,barrier=1,discard								wait,slotselect,logical,first_stage_mount
 product						/product		ext4	ro,barrier=1,discard								wait,slotselect,logical,first_stage_mount
 system						/system			ext4	ro,barrier=1,discard								wait,slotselect,logical,first_stage_mount
-system_ext					/system_ext		ext4	ro,barrier=1,discard								wait,slotselect,logical,first_stage_mount
-vendor						/vendor			ext4    ro,barrier=1,discard								wait,slotselect,logical,first_stage_mount
+system_ext					/system_ext		erofs	ro										wait,slotselect,logical,first_stage_mount
+vendor						/vendor			erofs   ro										wait,slotselect,logical,first_stage_mount
 /dev/block/by-name/metadata	/metadata		ext4	noatime,nosuid,nodev,discard,sync					wait,check,formattable,first_stage_mount
 /dev/block/bootdevice/by-name/userdata       /data        f2fs    rw,discard,nosuid,nodev,noatime,nodiratime,nobarrier,inline_xattr,inline_data,reserve_root=32768,resgid=1065   wait,check,formattable,latemount,fileencryption=ice,quota,reservedsize=128M
 /devices/platform/soc/7864900.sdhci/mmc_host*		auto		auto	nosuid,nodev					wait,voldmanaged=sdcard1:auto,encryptable=userdata
